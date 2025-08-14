@@ -6,18 +6,19 @@
 
 .hero{
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 220px 1fr;
   gap: 24px;
   align-items: center;
   margin: 40px 0 12px;
 }
 
 .avatar{
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 9999px;
   border: 2px solid var(--border);
   object-fit: cover;
+  object-position: 50% 40%;
   background: #1a1b1d;
 }
 
@@ -40,7 +41,9 @@
 
 .subtitle{
   margin: 0;
-  color: var(--muted);
+  color: var(--text);
+  font-size: clamp(16px, 2.2vw, 22px);
+  font-weight: 500;
 }
 
 .rule{
@@ -60,7 +63,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
+  width: 32px;
   color: var(--muted);
   margin-right: 8px;
   flex-shrink: 0;
@@ -72,9 +75,29 @@
 
 .links{
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin: 0;
 }
+
+/* Email actions */
+.emailWrapper{ display: inline-flex; align-items: center; gap: 8px; }
+.emailLink{ text-decoration: underline; text-underline-offset: 3px; }
+.copyBtn{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2px 6px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transform: translateY(10%);
+}
+.copyBtn:hover{ border-color: rgba(96,165,250,0.4); }
+.copyStatus{ color: var(--muted); font-size: 0.8rem; }
 
 .card{
   background: var(--card);
