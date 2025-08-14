@@ -26,3 +26,10 @@ hr { border: 0; border-top: 1px solid var(--border); }
 @media (prefers-reduced-motion: no-preference) {
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 } 
+
+/* Mobile global overflow and media sizing safeguards */
+@media (max-width: 720px) {
+  html, body { overflow-x: hidden; }
+  img, video { max-width: 100%; height: auto; }
+  svg { max-width: 100%; height: auto; }
+}

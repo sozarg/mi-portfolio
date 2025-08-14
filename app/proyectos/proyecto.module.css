@@ -487,7 +487,13 @@
     row-gap: 14px; 
   }
   .problemSection,
-  .solutionSection { min-height: auto; padding: 28px 24px; }
+  .solutionSection { 
+    min-height: auto; 
+    padding: 28px 24px; 
+    display: block;            /* apilar, sin subgrid */
+    grid-row: auto;            /* evitar solapado */
+    grid-template-rows: none;  /* cancelar subgrid */
+  }
   .problemSection p,
   .solutionSection p { max-width: 100%; }
 }
@@ -495,6 +501,11 @@
   .challengeContainer { row-gap: 12px; }
   .problemSection,
   .solutionSection { padding: 24px 20px; }
+  .challengeContainer { margin-bottom: 16px; }
+  .problemSection h4,
+  .solutionSection h4 { font-size: 1rem; font-weight: 700; }
+  .problemSection p,
+  .solutionSection p { font-size: 0.9rem; font-weight: 600; }
 }
 
 .problemSection li,
@@ -815,6 +826,70 @@
   .stackIcon span:last-child {
     font-size: 0.75rem;
   }
+}
+
+/* Mobile refinements */
+@media (max-width: 720px) {
+  .main{ overflow-x: hidden; }
+  .container{ padding: 0 20px; }
+  .projectTitle { font-size: clamp(1.55rem, 5.6vw, 2rem); }
+  .projectSubtitle { font-size: 1rem; }
+  .projectPurpose { font-size: 0.93rem; padding: 12px 14px; }
+  .projectSummary { font-size: 1rem; }
+
+  .projectImage { height: 180px; }
+  .videoPreview { min-height: 210px; margin-bottom: 24px; }
+
+  .section { padding: 18px; margin: 20px 0; }
+
+  .carouselTitle { font-size: 1.25rem; margin-bottom: 16px; }
+  .carouselGrid { grid-template-columns: 1fr; }
+  .carouselImage { height: 160px; }
+
+  .functionalityGrid { grid-template-columns: 1fr; gap: 20px; }
+  .functionalityCard { padding: 18px 14px; min-height: 150px; }
+
+  .metricsGrid { grid-template-columns: 1fr; gap: 16px; }
+  .metricCard { padding: 18px 14px; min-height: 112px; }
+  .metricValue { font-size: 1.9rem; }
+
+  .learningsContainer { grid-template-columns: 1fr; gap: 16px; }
+  .learningItem li, .nextStepsItem li { font-size: 0.95rem; }
+
+  .projectLinks { flex-direction: column; gap: 12px; }
+  .projectLink { width: 100%; text-align: center; padding: 10px 16px; }
+
+  .backButton { margin-bottom: 20px; padding: 6px 12px; }
+
+  .projectContent h2 { font-size: 1.3rem; margin: 22px 0 10px; }
+  .projectContent h3 { font-size: 1.05rem; margin: 18px 0 10px; }
+  .projectContent p, .projectContent li { font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+  .container{ padding: 0 18px; }
+  .projectTitle { font-size: clamp(1.35rem, 6.8vw, 1.85rem); }
+  .projectSubtitle { font-size: 0.95rem; }
+  .projectPurpose { font-size: 0.88rem; padding: 10px 12px; }
+
+  .projectImage { height: 150px; }
+  .videoPreview { min-height: 190px; }
+
+  .functionalityCard h4 { font-size: 1rem; }
+  .functionalityCard p { font-size: 0.88rem; }
+
+  .metricValue { font-size: 1.6rem; }
+  .metricLabel { font-size: 0.78rem; }
+
+  .ctaButton { padding: 12px 18px; font-size: 0.95rem; }
+  .section { padding: 14px; margin: 18px 0; }
+
+  /* Desafíos técnicos aún más compactos en teléfonos pequeños */
+  .challengeContainer { margin-bottom: 18px; }
+  .problemSection h4,
+  .solutionSection h4 { font-size: 0.95rem; font-weight: 800; }
+  .problemSection p,
+  .solutionSection p { font-size: 0.87rem; font-weight: 600; }
 }
 
 /* Meta chips compact row (used e.g., in Trivia) */
