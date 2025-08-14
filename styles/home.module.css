@@ -1,0 +1,449 @@
+.main{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.hero{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  align-items: center;
+  margin: 40px 0 12px;
+}
+
+.avatar{
+  width: 200px;
+  height: 200px;
+  border-radius: 9999px;
+  border: 2px solid var(--border);
+  object-fit: cover;
+  background: #1a1b1d;
+}
+
+.heroText{ display: flex; flex-direction: column; gap: 8px; }
+
+.name{
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+.badge{
+  display: inline-block;
+  font-size: 0.6em;
+  color: var(--accent);
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.subtitle{
+  margin: 0;
+  color: var(--muted);
+}
+
+.rule{
+  margin: 16px 0 24px;
+  border-top: 1px solid var(--border);
+}
+
+.info ul{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: grid;
+  gap: 10px;
+}
+
+.icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  color: var(--muted);
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  transform: translateY(7px);
+}
+
+.links{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform .1s ease, border-color .1s ease;
+}
+
+.card:hover{
+  transform: translateY(-7px);
+  border-color: rgba(96,165,250,0.4);
+}
+
+.cardTitle{
+  font-weight: 700;
+}
+
+.cardSub{
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.about{
+  margin-top: 32px;
+}
+
+.aboutTitle{
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: var(--foreground);
+}
+
+.aboutContent{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aboutContent p{
+  margin: 0;
+  line-height: 1.6;
+  color: var(--foreground);
+}
+
+.experiences{
+  margin-top: 48px;
+}
+
+.experiencesTitle{
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  color: var(--foreground);
+}
+
+.experiencesGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.experienceCard{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.experienceCard:hover{
+  transform: translateY(-4px);
+  border-color: rgba(96,165,250,0.4);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.experienceHeader{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.projectInfoHeader{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.companyName{
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.experienceTitle{
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.freelanceBadge{
+  background: var(--accent);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.experienceRole{
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--accent);
+}
+
+.experienceTime{
+  font-size: 0.9rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+.experienceTech{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.experiencePreview{
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.previewImage{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .2s ease;
+}
+
+.experienceCard:hover .previewImage{
+  transform: scale(1.05);
+}
+
+.viewProjectBtn{
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-align: center;
+  transition: all .2s ease;
+  border: none;
+  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.3);
+}
+
+.viewProjectBtn:hover{
+  background: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
+}
+
+@media (max-width: 720px){
+  .hero{ grid-template-columns: 1fr; text-align: center; }
+  .avatar{ margin: 0 auto; }
+  .links{ grid-template-columns: 1fr; }
+  .experiencesGrid{ grid-template-columns: 1fr; }
+  .experienceCard{ padding: 20px; }
+  .experienceHeader{ gap: 12px; }
+  .projectInfoHeader{ gap: 6px; }
+  .companyName{ font-size: 0.8rem; }
+}
+
+.projects{
+  margin-top: 48px;
+}
+
+.projectsTitle{
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  color: var(--foreground);
+}
+
+.projectsGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.projectCard{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.projectCard:hover{
+  transform: translateY(-4px);
+  border-color: rgba(96,165,250,0.4);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.projectCardHeader{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.projectType{
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.projectCardTitle{
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.projectDescription{
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+  flex: 1;
+}
+
+.projectTech{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techTag{
+  background: rgba(96, 165, 250, 0.1);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.projectPreview{
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.previewImage{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .2s ease;
+}
+
+.projectCard:hover .previewImage{
+  transform: scale(1.05);
+}
+
+.technologies{
+  margin: 48px 0;
+}
+
+.technologiesTitle{
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  color: var(--text);
+}
+
+.technologiesGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.techItem{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.techItem:hover{
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 25px rgba(96, 165, 250, 0.15);
+}
+
+.techName{
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.projectLinks{
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.projectLink{
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all .2s ease;
+  border: none;
+}
+
+.projectLink:hover{
+  background: #3b82f6;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px){
+  .hero{ grid-template-columns: 1fr; text-align: center; }
+  .avatar{ margin: 0 auto; }
+  .links{ grid-template-columns: 1fr; }
+  .experiencesGrid{ grid-template-columns: 1fr; }
+  .experienceCard{ padding: 20px; }
+  .experienceHeader{ gap: 12px; }
+  .projectInfoHeader{ gap: 6px; }
+  .companyName{ font-size: 0.8rem; }
+  .projectsGrid{ grid-template-columns: 1fr; }
+  .projectCard{ padding: 20px; }
+  .projectLinks{ flex-direction: column; }
+  .experienceTech{ gap: 6px; }
+  .techTag{ font-size: 0.75rem; padding: 3px 10px; }
+  .technologiesGrid{ grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .techItem{ padding: 16px; }
+} 
